@@ -1,7 +1,7 @@
 package com.cybertek.tests.day5_css_xpath_junit5;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -12,6 +12,31 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class YahooSearchPageTest {
+    WebDriver driver;
+
+    @BeforeAll
+    public  static void setUpDriver() {
+        WebDriverManager.chromedriver().setup();
+    }
+
+    @BeforeEach
+    public void setupWebDriver(){
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
+    }
+
+    @AfterEach
+    public  void closeBrowser() {
+        driver.quit();
+    }
+
+        @AfterAll
+                public static  void teardown(){
+            System.out.println(" @AfterAll nothing to do, here");
+        }
+
+
 
     // write 2 tests :
     // testYahooSearchHomePageTitle
@@ -23,9 +48,12 @@ public class YahooSearchPageTest {
     @Test
     public void testYahooSearchHomePageTitle() {
 
+
+
+
+
     //set up chrome driver
     WebDriverManager.chromedriver().setup();
-
     //create chromeDriver object
     WebDriver driver = new ChromeDriver();
     driver.manage().window().maximize();
