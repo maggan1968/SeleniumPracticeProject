@@ -6,6 +6,13 @@ import org.junit.jupiter.api.Test;
 /**
  * package always LowerCase
  * class name always UpperCase
+ * Test class name should be sth like this
+ * SomethingTest.java
+ * TestSomething.java
+ * SomethingSouldThatTest.java
+ *
+ * Test method
+ *
  */
 
 public class FirstTest {

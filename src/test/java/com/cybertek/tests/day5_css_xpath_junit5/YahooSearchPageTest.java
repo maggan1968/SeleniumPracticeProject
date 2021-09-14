@@ -12,7 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class YahooSearchPageTest {
-    WebDriver driver;
+
+    WebDriver driver;//instance veritable
 
     @BeforeAll
     public  static void setUpDriver() {
@@ -67,10 +68,6 @@ public class YahooSearchPageTest {
         // do static import, so you can do this
         // import static org.junit.jupiter.api.Assertions.*;
         assertEquals(expectedTitle,actualTitle ) ;
-
-
-
-
 
 
     }
