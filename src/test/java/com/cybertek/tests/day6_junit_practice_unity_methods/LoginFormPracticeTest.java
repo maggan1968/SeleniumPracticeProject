@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class LoginFormPracticeTest {
 
     WebDriver driver ;
-
+//setting up all driver stuff here directly in @BeforeEach method
     @BeforeEach
     public void setupWebDriver(){
         WebDriverManager.chromedriver().setup();
