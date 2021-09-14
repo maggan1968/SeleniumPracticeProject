@@ -18,11 +18,12 @@ public class YahooSearchTest extends TestBase {
     }
 
     @Test
-    public void testYahooSearchResultPage(){
+    public void testYahooSearchResultPage() throws InterruptedException {
         // navigate to yahoo search and enter selenium and hit enter
         driver.get("https://search.yahoo.com") ;
         driver.findElement(By.name("p")).sendKeys("selenium" + Keys.ENTER);
 //        assert title starts with selenium
+        Thread.sleep(1000);
         assertTrue(  driver.getTitle().startsWith("selenium") );
     }
 }

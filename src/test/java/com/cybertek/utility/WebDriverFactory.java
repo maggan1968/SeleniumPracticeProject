@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.util.Locale;
+
 /**
  * We need a utility class with method
  * to get WebDriver object with all the setting needed by passing broserName
@@ -18,7 +20,7 @@ public class WebDriverFactory {
 
         WebDriver driver ;
 
-        switch (browserName){
+        switch (browserName.toLowerCase()){
         case "chrome" :
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
