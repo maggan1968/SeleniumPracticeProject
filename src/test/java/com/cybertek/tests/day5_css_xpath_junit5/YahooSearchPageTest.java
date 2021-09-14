@@ -17,6 +17,7 @@ public class YahooSearchPageTest {
 
     @BeforeAll
     public  static void setUpDriver() {
+
         WebDriverManager.chromedriver().setup();
     }
 
