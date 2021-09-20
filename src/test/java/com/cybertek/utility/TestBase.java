@@ -19,10 +19,12 @@ public abstract class TestBase {
     // setting up all driver stuff here directly in @BeforeEach method
     @BeforeEach
     public void setupWebDriver(){
+
 //        WebDriverManager.chromedriver().setup();
 //        driver = new ChromeDriver();
 //        driver.manage().window().maximize();
         driver = WebDriverFactory.getDriver("chrome");
+
         // This is how we can set maximum timeout for finding element
         // in this example it will wait for 10 seconds
         // if element is found in 1 second ,it will just move on without finishing 10 seconds

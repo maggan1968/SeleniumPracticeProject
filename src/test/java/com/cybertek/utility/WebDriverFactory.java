@@ -22,17 +22,17 @@ public class WebDriverFactory {
 
         switch (browserName.toLowerCase()){
         case "chrome" :
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        break;
+             WebDriverManager.chromedriver().setup();
+             driver = new ChromeDriver();
+             break;
         case "firefox" :
-        WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();
-        break;
+             WebDriverManager.firefoxdriver().setup();
+             driver = new FirefoxDriver();
+             break;
         // other browsers omitted
         default:
-        driver = null ;
-        System.out.println("UNKNOWN BROWSER TYPE!!! " + browserName);
+             driver = null ;
+             System.out.println("UNKNOWN BROWSER TYPE!!! " + browserName);
         }
 
         driver.manage().window().maximize();
