@@ -26,7 +26,7 @@ public class FileUploadTest  extends TestBase {
         // you can copy the full path of file by
         // right clicking and holddown to option key and select -- copy "yourfilename" as path
         // it will copy the full path of your file
-        String filePath = "/Users/training/Desktop/TheCoolPic.jpg" ;
+        String filePath = "/Users/maggan68/Desktop/florida1.jpeg " ;
         fileInputField.sendKeys(filePath);
 
         /**
