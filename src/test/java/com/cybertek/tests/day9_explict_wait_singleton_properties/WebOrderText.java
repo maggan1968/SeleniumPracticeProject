@@ -20,13 +20,27 @@ public class WebOrderText extends TestBase {
 //        // click login
 //        driver.findElement(By.id("ctl00_MainContent_login_button")).click();
 
-        WebOrderUtility.login(driver);
+//        WebOrderUtility.login(driver);
+
+        WebOrderUtility.login(driver, "Tester","test");
+
+        System.out.println("is at order page" +   WebOrderUtility.isAtOrderPage(driver)    );
+
+        BrowserUtil.waitFor(2);
+
+        WebOrderUtility.logout(driver);
+
+        BrowserUtil.waitFor(2);
+
+        WebOrderUtility.login(driver,"bla","bla");
+
+        System.out.println("is at order page" +   WebOrderUtility.isAtOrderPage(driver)    );
 
         BrowserUtil.waitFor(4);
 
         // Create a class called WebOrderUtility
         // Create a static void method called
-        // login(username, password) accept 2 string for username password
+        // login(username, password) accept 2 string for username passwor
     }
 
 }
