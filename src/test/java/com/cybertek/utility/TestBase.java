@@ -12,6 +12,8 @@ import java.util.concurrent.TimeUnit;
  * This class is meant to be super class
  * to provide driver set up and closing browser
  * for it's subclasses
+ *
+ * NOW yoy can try to replace driver  with Driver.getDriver() sp  it can be same drive
  */
 public abstract class TestBase {
 

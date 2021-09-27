@@ -9,7 +9,10 @@ import org.openqa.selenium.WebElement;
 
 // THIS AIN'T NO TEST CLASS SO WE CAN NOT EXTEND TESTBASE
 // IT SIMPLY DOES NOT MAKE SENSE
+
 public class WebOrderUtility {
+
+    //BELOW 
 
 
     public static void login(WebDriver driverParam){
@@ -68,4 +71,8 @@ public class WebOrderUtility {
        return result;
        // System.out.println("header.isDisplayed() = " + header.isDisplayed());
     }
+
+
+    // so now we have Driver class that generate Single WebDriver instance
+    //we can use it anywhere
 }
