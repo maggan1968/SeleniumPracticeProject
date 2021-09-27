@@ -16,16 +16,17 @@ import java.util.concurrent.TimeUnit;
  * NOW yoy can try to replace driver  with Driver.getDriver() sp  it can be same drive
  */
 public abstract class TestBase {
-
+    // we want only subclasses of TestBase have access to this.
     protected WebDriver driver ;
     // setting up all driver stuff here directly in @BeforeEach method
+
     @BeforeEach
     public void setupWebDriver(){
 
 //        WebDriverManager.chromedriver().setup();
 //        driver = new ChromeDriver();
 //        driver.manage().window().maximize();
-        driver = WebDriverFactory.getDriver("chrome");
+        driver = Driver.getDriver(); //WebDriverFactory.getDriver("chrome");
 
         // This is how we can set maximum timeout for finding element
         // in this example it will wait for 10 seconds
@@ -36,7 +37,11 @@ public abstract class TestBase {
 
     @AfterEach
     public void closeBrowser(){
-        driver.quit();
+       //
+        // driver.quit();
+        //quit the browser+ make it null, so we can get new one when ask for it again
+
+        Driver.closeBrowser();
     }
 
 

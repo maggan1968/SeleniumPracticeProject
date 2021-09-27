@@ -12,8 +12,11 @@ import org.openqa.selenium.WebElement;
 
 public class WebOrderUtility {
 
-    //BELOW 
-
+    /**
+     * A method for logging into Web Order practice site from login page
+     * @param driverParam we don't have access to driver as we did in Test classes,
+     *                    so we need to pass it as parameter when calling this method
+     */
 
     public static void login(WebDriver driverParam){
 
