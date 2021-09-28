@@ -5,9 +5,8 @@ import com.cybertek.utility.Driver;
 import com.cybertek.utility.TestBase;
 import com.cybertek.utility.WebOrderUtil;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -70,14 +69,23 @@ public class WebOrderPracticeTest extends TestBase {
 
         WebOrderUtil.openWebOrderApp();
 
-        WebElement usernameField = driver.findElement(By.id("ctl00_MainContent_username"));
-        usernameField.sendKeys("AGFSFDHFTHFGHFYREGGF");
+        WebElement usernameField = driver.findElement(By.id("ctl00_MainContent_username")) ;
+        usernameField.sendKeys("ASKJDHASKJDHASKJDHAKJSHDAKSJHD");
         BrowserUtil.waitFor(2);
-        //usernameField.clear();// remove anything inside input element
+        //usernameField.clear(); // remove anything inside input element
+        // You can also use the action class to COMMAND(CTRL)+A and Press Backspace to delete
+        Actions actions = new Actions(Driver.getDriver() ) ;
+        actions.keyDown(Keys.COMMAND)
+                .sendKeys(usernameField,"A")
+                .keyUp(Keys.COMMAND)
+                .sendKeys(Keys.BACK_SPACE)
+                .perform();
 
-        //you can also use the action class to COMMAND+A and press Backspace to delete
-        //optionally, you can run javascript code like this
-        //theInputElement.value="";
+        // comment out above code if you want to try out jse
+        // Optionally , you can run javascript code like this
+        // theInputElement.value="" ;
+        JavascriptExecutor jse = (JavascriptExecutor) driver ;
+        jse.executeScript("arguments[0].value='' ", usernameField ) ;
 
 
         BrowserUtil.waitFor(2);

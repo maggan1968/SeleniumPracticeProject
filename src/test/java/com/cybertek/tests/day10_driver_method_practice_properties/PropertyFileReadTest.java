@@ -12,20 +12,28 @@ import java.util.Properties;
 public class PropertyFileReadTest {
 
     @Test
-    public void testRead() throws IOException {
-        //Create a FileInputStream by opening a connection to an actual file in that path
-        FileInputStream in = new FileInputStream("config.properties");
-        //Create a Properties object, so we can load key value pair and access it easily
-        Properties properties = new Properties();
-        //Load the key-value pair into Properties object
-        properties.load(in);
-        // close the connection to the file since we already loaded the content
+    public void testInitialRead() throws IOException {
+
+        // Open a connection to the file using FileInputStream object
+        FileInputStream in = new FileInputStream("config.properties") ;
+
+        // Create empty Properties object
+        Properties myProperty = new Properties() ;
+        // Load the FileInputStream into the Properties Object
+        myProperty.load(in);
+        // close the connection by calling close method of FileInputStream object
         in.close();
-        // OPTIONALLY :  this is how we can easily print out all key value pair
-        properties.list(System.out);
-        // This is how we access individual value according to the key provided
-        String helloValue = properties.getProperty("hello") ;
+
+        // now actually read from the properties file using it's key
+        String helloValue =  myProperty.getProperty("hello");
         System.out.println("helloValue = " + helloValue);
+
+        // read the value of key called "message"
+        System.out.println("myProperty.getProperty(\"message\") = "
+                + myProperty.getProperty("message"));
+
+        System.out.println("myProperty.getProperty(\"weborder_url\") = "
+                + myProperty.getProperty("weborder_url"));
     }
 
     @Test
