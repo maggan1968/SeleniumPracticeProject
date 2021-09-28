@@ -77,5 +77,7 @@ public class WebOrderUtility {
 
 
     // so now we have Driver class that generate Single WebDriver instance
-    //we can use it anywhere
+    // we can use it anywhere here in this method
+    // without passing the WebDriver as parameter
+
 }
